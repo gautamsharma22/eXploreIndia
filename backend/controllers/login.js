@@ -23,6 +23,7 @@ const login = async (req, res) => {
     }
     if (result) {
       res.status(200).json({
+        userID: existingUser._id,
         message: `Welcome ${existingUser.firstName}`,
       });
     } else {

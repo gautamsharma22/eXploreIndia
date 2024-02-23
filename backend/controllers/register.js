@@ -4,7 +4,7 @@ const register = async (req, res) => {
   const newUser = new User({ firstName, lastName, email, password });
   const exsitingUser = await User.findOne({ email });
   if (exsitingUser) {
-    return res.send({
+    return res.status(400).send({
       message: "Email Already Used!",
     });
   }
